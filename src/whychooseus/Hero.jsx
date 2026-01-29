@@ -16,7 +16,7 @@ const Hero = () => {
         <div className="whychooseus-navbar-container-wrapper">
           <div className="whychooseus-navbar-container">
             {/* Logo */}
-             <Link to="/"> <img src="/src/assets/logo.png" alt="Co-book Logo" className="whychooseus-logo-image"/>
+             <Link to="/"> <img src="src/assets/logo.png" alt="Co-book Logo" className="whychooseus-logo-image"/>
   </Link>
 
             {/* Mobile Menu Toggle */}

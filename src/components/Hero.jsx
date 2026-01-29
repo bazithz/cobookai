@@ -19,7 +19,7 @@ const Hero = () => {
             
 <div className="navbar-logo">
   <Link to="/">
-    <img src="/src/assets/logo.png" alt="Co-book Logo" className="logo-image"/>
+    <img src="src/assets/logo.png" alt="Co-book Logo" className="logo-image"/>
   </Link></div>
 
             {/* Mobile Menu Toggle */}
