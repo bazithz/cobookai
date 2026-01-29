@@ -1,0 +1,91 @@
+.benefits-section {
+  background: #050505;
+  padding: 90px 0;
+  color: white;
+}
+
+.benefits-container {
+  width: 90%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* Title */
+.benefits-title {
+  font-family: "Brinnan", sans-serif;
+  font-size: 38px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* Card */
+.benefits-card {
+  background: #ffffff0d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 26px 22px;
+  min-height: 150px;
+
+  transition: all 0.3s ease;
+}
+
+.benefits-card:hover {
+  border-color: rgba(77, 124, 255, 0.35);
+  transform: translateY(-4px);
+}
+
+/* Icon Box */
+.benefits-icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  background: rgba(77, 124, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 70px; 
+}
+
+.benefits-icon-box img {
+  object-fit: contain;
+}
+
+/* Heading */
+.benefits-heading {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+  color: white;
+
+  /* Divider Line */
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Description */
+.benefits-desc {
+  font-size: 0.6rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.45);
+  max-width: 230px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-card {
+    min-height: auto;
+  }
+}

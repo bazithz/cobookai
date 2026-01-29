@@ -1,0 +1,208 @@
+.business-wrapper {
+  min-height: 100vh;
+  background: #000000;
+  padding: 70px 20px;
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+.business-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.business-title {
+  font-family: "Brinnan", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.business-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr 1.6fr 1.2fr;
+  gap: 25px;
+  align-items: start;
+}
+
+/* Left Labels */
+.business-left p {
+  position: relative;
+  font-size: 18px;
+  padding: 13px 0;
+  top: 95px;
+  opacity: 0.9;
+}
+
+/* Cards */
+.business-card {
+  border-radius: 14px;
+  padding: 28px 25px;
+  min-height: 620px;
+}
+
+.business-card h3 {
+  font-size: 24px;
+  margin-bottom: 22px;
+  font-weight: 400;
+}
+
+.business-card p {
+  font-size: 14px;
+  padding: 18px 0;
+  opacity: 0.75;
+}
+
+/* Dark Cards */
+.business-card.dark {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Highlight Card EXACT Gradient Border */
+.business-card.highlight {
+  position: relative;
+  background: rgba(20, 30, 60, 0.55);
+  border: 2px solid transparent;
+  border-radius: 16px;
+
+  background-image: linear-gradient(
+      rgba(10, 15, 30, 0.85),
+      rgba(10, 15, 30, 0.85)
+    ),
+    linear-gradient(180deg, #1a51f4, #5480fe);
+
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  box-shadow: 0px 0px 25px rgba(84, 128, 254, 0.35);
+}
+
+.business-card.highlight p {
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #1a51f4, #5480fe);
+  padding: 6px 16px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.badge-icon {
+  color: #ffffff;
+  margin-right: 6px;
+}
+
+/* Hover Effect for Dark Cards */
+.business-card.dark {
+  transition: all 0.35s ease;
+  border: 2px solid transparent;
+}
+
+.business-card.dark:hover {
+  background: rgba(20, 30, 60, 0.55);
+
+  background-image: linear-gradient(
+      rgba(10, 15, 30, 0.85),
+      rgba(10, 15, 30, 0.85)
+    ),
+    linear-gradient(180deg, #1a51f449, #5481fe62);
+
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  box-shadow: 0px 0px 25px rgba(84, 128, 254, 0.35);
+
+  transform: translateY(-6px);
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1160px) {
+  .business-wrapper {
+    padding: 50px 20px;
+  }
+
+  .business-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .business-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .business-left {
+    display: none;
+  }
+
+  .business-card {
+    min-height: auto;
+    padding: 24px 20px;
+  }
+
+  .business-card h3 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .business-card p {
+    font-size: 14px;
+    padding: 14px 0;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  .business-wrapper {
+    padding: 40px 16px;
+  }
+
+  .business-container {
+    padding: 0 10px;
+  }
+
+  .business-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .business-card {
+    padding: 20px 16px;
+  }
+
+  .business-card h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .business-card p {
+    font-size: 13px;
+    padding: 12px 0;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .business-title {
+    font-size: 24px;
+  }
+
+  .business-card h3 {
+    font-size: 18px;
+  }
+}

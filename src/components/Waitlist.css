@@ -1,0 +1,147 @@
+.waitlist-section {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+}
+
+/* Dark overlay for readability */
+.waitlist-overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+}
+
+/* Content Center */
+.waitlist-content {
+  text-align: center;
+  max-width: 720px;
+  margin-top: 500px;
+}
+
+/* Badge */
+.waitlist-badge {
+ background: transparent;
+  color: #ffffff;
+  border: 1px solid #4d7cff;
+  border-radius: 24px;
+
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 500;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: fit-content;
+
+  /* Neon inset glow */
+  box-shadow: inset 0 0 12px rgba(59, 130, 246, 0.4),
+    inset 0 0 12px rgba(59, 130, 246, 0.2);
+
+  /* Pulse animation */
+  animation: innerNeonPulse 2s ease-in-out infinite;
+
+  margin-bottom: 28px;
+}
+
+/* Title */
+.waitlist-title {
+  font-family: "Brinnan", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 18px;
+}
+
+/* Subtitle */
+.waitlist-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 42px;
+}
+
+/* Buttons */
+.waitlist-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Secondary button */
+.waitlist-btn-secondary {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.waitlist-btn-secondary:hover {
+  color: white;
+}
+
+/* Primary button */
+.waitlist-btn-primary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #4d7cff;
+  border-radius: 24px;
+  padding: 12px 24px;
+
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: fit-content;
+  transition: all 0.3s ease;
+  margin-top: auto;
+
+  /* Neon inset glow */
+  box-shadow: inset 0 0 12px rgba(59, 130, 246, 0.4),
+    inset 0 0 12px rgba(59, 130, 246, 0.2);
+
+  /* Pulse animation */
+  animation: innerNeonPulse 2s ease-in-out infinite;
+}
+
+.waitlist-btn-primary:hover {
+  background: rgba(40, 120, 255, 0.55);
+  transform: translateY(-2px);
+}
+
+.waitlist-btn-primary span {
+  font-size: 1.05rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .waitlist-title {
+    font-size: 2.1rem;
+  }
+
+  .waitlist-subtitle {
+    font-size: 0.95rem;
+  }
+}

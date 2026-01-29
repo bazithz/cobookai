@@ -1,0 +1,164 @@
+.autonomous-modern-finance-section {
+  background: #000000;
+  color: #ffffff;
+  padding: 80px 0 100px;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.autonomous-main-title {
+  font-family: "Brinnan", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  line-height: 1.05;
+  max-width: 900px;
+  text-align: center;
+  margin-left: auto;      /* pushes heading toward right */
+  margin-right: -62px;
+}
+
+.autonomous-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 60px;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.autonomous-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  padding-left: 8px;
+}
+
+.autonomous-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+  padding-left: 32px;
+}
+
+.autonomous-feature-item.autonomous-active {
+  padding-left: 0;
+}
+
+/* Vertical blue line on the left of active item */
+.autonomous-vertical-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+.autonomous-blue-indicator {
+  width: 6px;
+  height: 6px;
+  background: #3b82f6;
+  border-radius: 1px;
+  flex-shrink: 0;
+  margin-top: 8px;
+  margin-right: 18px;
+  margin-left: 12px;
+}
+
+.autonomous-feature-content {
+  flex: 1;
+}
+
+.autonomous-feature-title {
+  font-size: 1.38rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.autonomous-feature-item.autonomous-active .autonomous-feature-title {
+  font-weight: 500;
+}
+
+.autonomous-feature-desc {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.45;
+  margin-top: 2px;
+}
+
+.autonomous-dashboard-preview-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+  background: #111;
+  border: 1px solid #222;
+}
+
+/* Caption overlay on dashboard image */
+.autonomous-dashboard-caption {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  z-index: 10;
+  letter-spacing: -0.3px;
+}
+
+.autonomous-dashboard-preview {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .autonomous-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+
+  .autonomous-main-title {
+    font-size: 3.2rem;
+  }
+
+  .autonomous-dashboard-preview-wrapper {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .autonomous-modern-finance-section {
+    padding: 60px 0 80px;
+  }
+
+  .autonomous-main-title {
+    font-size: 1.8rem;
+    margin-right: 5px;
+  }
+
+  .autonomous-feature-title {
+    font-size: 1.25rem;
+  }
+
+  .autonomous-feature-desc {
+    font-size: 0.98rem;
+  }
+
+  .autonomous-dashboard-caption {
+    font-size: 0.95rem;
+    top: 16px;
+    right: 16px;
+  }
+}

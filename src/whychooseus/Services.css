@@ -1,0 +1,240 @@
+.service-section {
+  background: #050505;
+  padding: 120px 90px;
+  color: white;
+
+}
+
+.service-container {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 100px;
+  align-items: flex-start;
+}
+
+/* LEFT SIDE */
+.service-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: sticky;
+  top: 120px;
+}
+
+.service-heading {
+  font-family: "Brinnan", sans-serif;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: auto;
+}
+
+.service-learn-btn {
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid #4d7cff;
+  background: transparent;
+  color: white;
+
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  margin-top: 60px;
+
+  transition: 0.3s ease;
+}
+
+.service-learn-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* RIGHT SIDE */
+.service-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* CARD */
+.service-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 22px 26px;
+  border-radius: 0;
+
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.service-card:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ACTIVE */
+.service-card.active {
+  background: transparent;
+}
+
+/* ICON BOX */
+.service-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.service-icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* TEXT */
+.service-text {
+  flex: 1;
+}
+
+.service-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.service-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 90%;
+  margin-top: 8px;
+}
+
+/* ARROW */
+.service-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.service-arrow-icon {
+  width: 10px;
+  height: 6px;
+  transition: transform 0.3s ease;
+}
+
+.service-arrow-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+  .service-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .service-left {
+    position: static;
+  }
+
+  .service-heading {
+    font-size: 2.2rem;
+  }
+
+  .service-learn-btn {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-section {
+    padding: 80px 40px;
+  }
+
+  .service-heading {
+    font-size: 1.8rem;
+  }
+
+  .service-card {
+    padding: 18px 20px;
+    gap: 14px;
+  }
+
+  .service-icon-box {
+    width: 44px;
+    height: 44px;
+  }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .service-title {
+    font-size: 0.95rem;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-section {
+    padding: 60px 20px;
+  }
+
+  .service-heading {
+    font-size: 1.5rem;
+  }
+
+  .service-card {
+    padding: 16px 12px;
+    gap: 12px;
+  }
+
+  .service-icon-box {
+    width: 40px;
+    height: 40px;
+  }
+
+  .service-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .service-arrow {
+    width: 24px;
+    height: 24px;
+  }
+
+  .service-arrow-icon {
+    width: 10px;
+    height: 6px;
+  }
+}

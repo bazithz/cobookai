@@ -1,0 +1,15 @@
+.dashboard-mock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #000000;
+}
+
+.mock-image {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}

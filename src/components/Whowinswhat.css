@@ -1,0 +1,121 @@
+@import url('https://fonts.cdnfonts.com/css/brinnan');
+
+.who-wins-section {
+  background: #000000;
+  padding: 80px 0;
+  color: white;
+}
+
+.container {
+  max-width: 1400px;          /* or use Bootstrap container if you have it */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-family: "Brinnan", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  text-align: left;           /* ← left aligned as in your screenshot */
+  margin: 0 0 48px 0;
+  letter-spacing: -0.02em;
+}
+
+.cards-scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 10px;       /* space for touch drag on mobile */
+}
+
+.cards-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 20px;
+  width: fit-content;
+}
+
+.benefit-card {
+  width: 250px;
+  min-width: 260px;
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  background: #151515;
+  border-color: #333333;
+}
+
+.icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.benefit-icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 0px 0;
+  color: #ffffff;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #aaaaaa;
+  margin: 0;
+}
+
+/* ────────────────────────────────────────────────
+   Responsive adjustments
+───────────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 40px;
+  }
+  .benefit-card {
+    width: 300px;
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .who-wins-section {
+    padding: 60px 0;
+  }
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .benefit-card {
+    width: 280px;
+    min-width: 280px;
+    padding: 24px 20px;
+  }
+  .icon-wrapper {
+    width: 44px;
+    height: 44px;
+  }
+  .benefit-icon {
+    width: 40px;
+    height: 40px;
+  }
+}

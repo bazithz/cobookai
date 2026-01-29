@@ -1,0 +1,740 @@
+
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #000000;
+  overflow-x: hidden;
+}
+
+/* Background Image */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/src/assets/bannerbackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ========================================
+   NAVBAR STYLES
+   ======================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  padding: 20px 40px;
+  transition: background 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-container-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 60px;
+  padding: 8px 24px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+/* Logo Styles */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  padding: 8px 12px;
+}
+
+.navbar-logo:hover {
+  opacity: 0.8;
+}
+
+.logo-image {
+  width: 55px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 26px;
+  height: 20px;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropdown Styles */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 30, 45, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 8px;
+  min-width: 200px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  animation: dropdownFadeIn 0.2s ease;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.dropdown-item {
+  display: block;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Action Buttons */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-login {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 8px 20px;
+  transition: color 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.btn-login:hover {
+  color: #ffffff;
+}
+
+.btn-get-started {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  white-space: nowrap;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-get-started:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+.btn-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btn-get-started:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* ========================================
+   BANNER CONTENT STYLES
+   ======================================== */
+.banner-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  flex: 1;
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+/* AI Badge */
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgb(0, 0, 0);
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    inset 0 0 15px rgba(59, 130, 246, 0.4),
+    inset 0 0 25px rgba(59, 130, 246, 0.2);
+  animation: innerNeonPulse 2s ease-in-out infinite;
+}
+
+@keyframes innerNeonPulse {
+  0%, 100% {
+    box-shadow: 
+      inset 0 0 15px rgba(59, 130, 246, 0.4),
+      inset 0 0 25px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 
+      inset 0 0 20px rgba(59, 130, 246, 0.6),
+      inset 0 0 35px rgba(59, 130, 246, 0.3);
+    border-color: rgba(59, 130, 246, 0.7);
+  }
+}
+
+.ai-icon {
+  color: #3b82f6;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Main Title */
+.banner-title {
+ font-family: "Brinnan", sans-serif;
+  font-size: 96px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 32px 0;
+}
+
+.title-highlight {
+  background: linear-gradient(135deg, #ffffff 0%, #a0c4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 400;
+}
+
+/* Description */
+.banner-description {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 48px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Action Buttons */
+.banner-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.btn-demo,
+.btn-waitlist {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 16px 32px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.btn-demo {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid transparent;
+}
+
+.btn-demo:hover {
+  color: #ffffff;
+}
+
+.btn-waitlist {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  border: 1.5px solid rgba(59, 130, 246, 0.5);
+  border-radius: 50px;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    inset 0 0 15px rgba(59, 130, 246, 0.4),
+    inset 0 0 15px rgba(59, 130, 246, 0.2);
+  animation: innerNeonPulse 2s ease-in-out infinite;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-waitlist:hover {
+  background: rgba(59, 130, 246, 0.25);
+  border-color: rgba(59, 130, 246, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.btn-waitlist:hover .btn-icon {
+  transform: translateX(3px);
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 16px 32px;
+  }
+
+  .navbar-container {
+    gap: 32px;
+  }
+
+  .navbar-links {
+    gap: 24px;
+  }
+
+  .banner-content {
+    padding: 0 32px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+
+  .banner-title {
+    font-size: 72px;
+  }
+
+  .banner-description {
+    font-size: 17px;
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .navbar-container-wrapper {
+    border-radius: 50px;
+    padding: 6px 16px;
+  }
+  
+  .navbar-container {
+    gap: 16px;
+  }
+
+  .navbar-logo {
+    padding: 6px 8px;
+  }
+
+  .logo-image {
+    width: 45px;
+    height: 28px;
+  }
+
+  .logo-text {
+    font-size: 16px;
+  }
+
+  /* Show mobile toggle */
+  .mobile-menu-toggle {
+    display: block;
+    order: 3;
+  }
+  
+  /* Mobile menu styles */
+  .navbar-links {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    right: 20px;
+    background: rgba(20, 30, 45, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 0;
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .navbar-links.mobile-open {
+    max-height: 500px;
+    opacity: 1;
+    padding: 20px;
+  }
+
+  .nav-link {
+    padding: 14px 16px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-trigger {
+    width: 100%;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-radius: 10px;
+  }
+
+  .dropdown-trigger:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    margin-top: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-actions {
+    gap: 12px;
+    order: 2;
+  }
+  
+  .btn-get-started {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .btn-login {
+    display: none;
+  }
+
+  .btn-arrow {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Banner Content */
+  .banner-content {
+    padding: 0 20px;
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  .ai-badge {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin-bottom: 32px;
+  }
+
+  .banner-title {
+    font-size: 48px;
+  }
+
+  .banner-description {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .banner-description br {
+    display: none;
+  }
+
+  .banner-actions {
+    gap: 16px;
+  }
+
+  .btn-demo,
+  .btn-waitlist {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+}
+
+/* Small Mobile - 480px */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .navbar-container-wrapper {
+    padding: 4px 12px;
+  }
+
+  .logo-image {
+    width: 35px;
+    height: 24px;
+  }
+
+  .logo-text {
+    font-size: 14px;
+  }
+
+  .btn-get-started {
+    padding: 8px 16px;
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .btn-get-started span {
+    display: none;
+  }
+
+  .btn-get-started::after {
+    content: 'Get Started';
+  }
+
+  /* Banner Content */
+  .banner-content {
+    padding: 0 16px;
+    padding-top: 90px;
+    padding-bottom: 32px;
+  }
+
+  .ai-badge {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin-bottom: 24px;
+  }
+
+  .ai-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .banner-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .banner-description {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+
+  .banner-actions {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .btn-demo,
+  .btn-waitlist {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 14px;
+    justify-content: center;
+  }
+
+  .btn-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Very Small Screens - 375px */
+@media (max-width: 375px) {
+  .banner-title {
+    font-size: 32px;
+  }
+
+  .banner-description {
+    font-size: 13px;
+  }
+}
+
+/* Handle very wide screens */
+@media (min-width: 1920px) {
+  .hero-background {
+    background-size: contain;
+    background-position: top center;
+  }
+}
