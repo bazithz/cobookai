@@ -1,7 +1,6 @@
 import React from 'react';
-import './WhoWinsWhat.css';
+import './Whowinswhat.css';
 
-// Icon imports - adjust paths as needed
 import FoundersIcon from '../assets/founders.png';
 import CFOIcon from '../assets/CFOS.png';
 import AccountantsIcon from '../assets/Accountants.png';

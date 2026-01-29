@@ -1,5 +1,5 @@
 import React from "react";
-import "./aintervene.css";
+import "./Aintervene.css";
 
 import Retail from "../assets/Retail.png";
 import Firm from "../assets/Firm.png";

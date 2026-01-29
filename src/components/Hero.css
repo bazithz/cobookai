@@ -290,9 +290,6 @@
   transform: translateX(3px);
 }
 
-/* ========================================
-   BANNER CONTENT STYLES
-   ======================================== */
 .banner-content {
   position: relative;
   z-index: 1;
@@ -309,7 +306,6 @@
   padding-bottom: 60px;
 }
 
-/* AI Badge */
 .ai-badge {
   display: inline-flex;
   align-items: center;
@@ -452,11 +448,7 @@
   transform: translateX(3px);
 }
 
-/* ========================================
-   RESPONSIVE STYLES
-   ======================================== */
 
-/* Tablet - 1024px */
 @media (max-width: 1024px) {
   .navbar {
     padding: 16px 32px;
@@ -513,13 +505,11 @@
     font-size: 16px;
   }
 
-  /* Show mobile toggle */
   .mobile-menu-toggle {
     display: block;
     order: 3;
   }
   
-  /* Mobile menu styles */
   .navbar-links {
     position: fixed;
     top: 80px;
