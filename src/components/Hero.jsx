@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import './Hero.css';
+import logo from "../assets/logo.png";
 
 const Hero = () => {
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
@@ -19,7 +20,7 @@ const Hero = () => {
             
 <div className="navbar-logo">
   <Link to="/">
-    <img src="src/assets/logo.png" alt="Co-book Logo" className="logo-image"/>
+    <img src={logo} alt="Co-book Logo" className="logo-image"/>
   </Link></div>
 
             {/* Mobile Menu Toggle */}
